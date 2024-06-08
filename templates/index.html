@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Disorder Detector</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Gayathri:wght@100;400;700&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <div class="alert alert-danger" role="alert">
+           ⚠️ Please note that this tool is for informational purposes only and not a substitute for professional medical advice.
+        </div>
+        <div class="card p-4">
+            
+
+
+<div class="area" >
+    <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+</div >
+            <h1 class="card-title">Sleep😴 Disorder🧟 Detector🔍</h1>
+            <form id="predictionForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="gender">Gender:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="male" name="feature1" value="1">
+                            <label class="form-check-label" for="male">Male ♂️ </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="female" name="feature1" value="0">
+                            <label class="form-check-label" for="female">Female ♀️ </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="bmiCategory">BMI Category:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="obese" name="feature8" value="2">
+                            <label class="form-check-label" for="obese">Obese</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="overweight" name="feature8" value="1">
+                            <label class="form-check-label" for="overweight">Overweight</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="normal" name="feature8" value="0">
+                            <label class="form-check-label" for="normal">Normal</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="underweight" name="feature8" value="3">
+                            <label class="form-check-label" for="underweight">Underweight</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="age">Age:</label>
+                        <input type="number" class="form-control" id="age" name="feature2" placeholder="Enter your age" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="occupation">Occupation:</label>
+                        <select id="occupation" class="form-control" name="feature3" required>
+                            <option value="0">Healthcare</option>
+                            <option value="1">Engineering & Tech</option>
+                            <option value="2">Finance & Business</option>
+                            <option value="3">Education/student</option>
+                            <option value="4">Legal</option>
+                            <option value="4">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="sleepDuration">Sleep Duration:</label>
+                        <input type="number" class="form-control" id="sleepDuration" name="feature4" placeholder="Enter sleep duration (hours)" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="qualityOfSleep">Quality of Sleep:</label>
+                        <input type="number" class="form-control" id="qualityOfSleep" name="feature5" placeholder="Enter sleep quality (☹️ 1 - 10 😊)" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="physicalActivity">Physical Activity Level:</label>
+                        <input type="number" class="form-control" id="physicalActivity" name="feature6" placeholder="Enter physical activity level (10-100)" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="stressLevel">Stress Level:</label>
+                        <input type="number" class="form-control" id="stressLevel" name="feature7" placeholder="Enter stress level (😊 1 - 10 😡)" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="bloodPressureHigher">Blood Pressure Higher:</label>
+                        <input type="number" class="form-control" id="bloodPressureHigher" name="feature9" placeholder="Enter blood pressure higher" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="bloodPressureLower">Blood Pressure Lower:</label>
+                        <input type="number" class="form-control" id="bloodPressureLower" name="feature10" placeholder="Enter blood pressure lower" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="heartRate">Heart Rate:</label>
+                        <input type="number" class="form-control" id="heartRate" name="feature11" placeholder="Enter heart rate" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="dailySteps">Daily Steps:</label>
+                        <input type="number" class="form-control" id="dailySteps" name="feature12" placeholder="Enter daily steps (500 - 5000)" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary btn-block">Predict 🔍</button>
+                    </div>
+                </div>
+            </form>
+            <div id="result" class="mt-3"></div>
+        </div>
+    </div>
+    
+
+    <div class="ft">
+        <footer>
+          <div class="sig">
+          Designed and developed by<br>
+        </div>
+          <div class="nm"> 
+          Rushikesh R Patil<br>
+        </div>
+          <div class="social">
+            <a href="https://github.com/aero971">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476c0-.237-.013-1.024-.013-1.862c-2.512.463-3.162-.612-3.362-1.175c-.113-.288-.6-1.175-1.025-1.413c-.35-.187-.85-.65-.013-.662c.788-.013 1.35.725 1.538 1.025c.9 1.512 2.338 1.087 2.912.825c.088-.65.35-1.087.638-1.337c-2.225-.25-4.55-1.113-4.55-4.938c0-1.088.387-1.987 1.025-2.687c-.1-.25-.45-1.275.1-2.65c0 0 .837-.263 2.75 1.024a9.28 9.28 0 0 1 2.5-.337c.85 0 1.7.112 2.5.337c1.912-1.3 2.75-1.024 2.75-1.024c.55 1.375.2 2.4.1 2.65c.637.7 1.025 1.587 1.025 2.687c0 3.838-2.337 4.688-4.562 4.938c.362.312.675.912.675 1.85c0 1.337-.013 2.412-.013 2.75c0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10"/></svg>
+            </a>
+      
+            <a href="https://rushipatil99.netlify.app/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor"><path fill-rule="evenodd" d="M14 7a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm3 2h-2v6h2z" clip-rule="evenodd"/><path d="M6 7a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zm0 4a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2zm-1 5a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1"/><path fill-rule="evenodd" d="M4 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zm16 2H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1" clip-rule="evenodd"/></g></svg>
+            </a>
+      
+            <a href="https://www.instagram.com/being_varah_mihir?igsh=MXc1aWZ3dnoyYnJpNw==">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 8.75a3.25 3.25 0 1 0 0 6.5a3.25 3.25 0 0 0 0-6.5"/><path fill="currentColor" fill-rule="evenodd" d="M6.77 3.082a47.472 47.472 0 0 1 10.46 0c1.899.212 3.43 1.707 3.653 3.613a45.67 45.67 0 0 1 0 10.61c-.223 1.906-1.754 3.401-3.652 3.614a47.468 47.468 0 0 1-10.461 0c-1.899-.213-3.43-1.708-3.653-3.613a45.672 45.672 0 0 1 0-10.611C3.34 4.789 4.871 3.294 6.77 3.082M17 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-9.75 6a4.75 4.75 0 1 1 9.5 0a4.75 4.75 0 0 1-9.5 0" clip-rule="evenodd"/></svg>      </a>
+            
+            <a href="https://www.linkedin.com/in/rushi9999">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.47 2H3.53a1.45 1.45 0 0 0-1.47 1.43v17.14A1.45 1.45 0 0 0 3.53 22h16.94a1.45 1.45 0 0 0 1.47-1.43V3.43A1.45 1.45 0 0 0 20.47 2M8.09 18.74h-3v-9h3ZM6.59 8.48a1.56 1.56 0 1 1 0-3.12a1.57 1.57 0 1 1 0 3.12m12.32 10.26h-3v-4.83c0-1.21-.43-2-1.52-2A1.65 1.65 0 0 0 12.85 13a2 2 0 0 0-.1.73v5h-3v-9h3V11a3 3 0 0 1 2.71-1.5c2 0 3.45 1.29 3.45 4.06Z"/></svg>
+            </a>
+            
+          </div>
+        </footer>
+      </div>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const feature1 = document.querySelector('input[name="feature1"]:checked').value;
+            const feature2 = document.getElementById('age').value;
+            const feature3 = document.getElementById('occupation').value;
+            const feature4 = document.getElementById('sleepDuration').value;
+            const feature5 = document.getElementById('qualityOfSleep').value;
+            const feature6 = document.getElementById('physicalActivity').value;
+            const feature7 = document.getElementById('stressLevel').value;
+            const feature8 = document.querySelector('input[name="feature8"]:checked').value;
+            const feature9 = document.getElementById('bloodPressureHigher').value;
+            const feature10 = document.getElementById('bloodPressureLower').value;
+            const feature11 = document.getElementById('heartRate').value;
+            const feature12 = document.getElementById('dailySteps').value;
+    
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11, feature12 })
+            });
+    
+            const data = await response.json();
+            const resultDiv = document.getElementById('result');
+            if (data.prediction) {
+                resultDiv.innerHTML = `<div class="alert alert-info">
+                    ${data.prediction}<br>
+                        Here are some recommendations📑 for best dream site🌃:
+                    <ul>
+                        <li>${data.advice[0]}</li>
+                        <li>${data.advice[1]}</li>
+                        <li>${data.advice[2]}</li>
+                        <li>${data.advice[3]}</li>
+                        <li>${data.advice[4]}</li>
+                    </ul>  
+                    
+                </div>`;
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-danger">Error: ${data.error}</div>`;
+            }
+        });
+    </script>
+    
+    
+    
+</body>
+</html>
